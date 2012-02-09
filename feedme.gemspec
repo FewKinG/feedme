@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Sven C."]
   s.email       = ["fewking@paniccrew.de"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Simple feedback gem for Rails 3 }
+  s.description = %q{Feedback plugin to query the user for ratings, opinions, Q&A etc. Goal is to make it work nicely with Ajax-heavy and non-ActiveRecord implementations}
 
   s.rubyforge_project = "feedme"
 
