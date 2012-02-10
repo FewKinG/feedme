@@ -1,9 +1,9 @@
 function feedme_set_form_param(form, key, value) {
-  form.append('<input type="hidden" name="' + key + '" value="' + value + '" />')
+  form.append('<input type="hidden" class="element" name="elements[' + key + ']" value="' + value + '" />')
 }
 
 function feedme_reset_form(form) {
-  $("input[type=hidden]", form).remove()
+  $("input[type=hidden].element", form).remove()
 }
 
 function feedme_setup_form(model, form) {
@@ -12,13 +12,12 @@ function feedme_setup_form(model, form) {
     $("#feedme_" + model + " .element").each(function(ind, element) {
       element = $(element)
       var value
-      var key = element.attr('id')
+      var key = element.data('id')
       if (element.hasClass('stars')) {
 	value = feedme_get_star_value(element)
       }	else if (element.hasClass('text')) {
 	value = feedme_get_text_value(element)
       }
-      alert(key + "=" + value)
       if (value) {
 	feedme_set_form_param(form, key, value)
       }

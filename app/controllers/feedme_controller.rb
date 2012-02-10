@@ -1,12 +1,15 @@
 class FeedmeController < ApplicationController
 
   def create
-    model = params[:module]
+    model = params[:model]
+    klass = model.classify.constantize
+    obj = klass.new(params[:elements])
+    @success = obj.save 
     render :partial => "feedme/create_#{model.to_s}"
   end
 
   def new
-    model = params[:module]
+    model = params[:model]
     render :partial => "feedme/show_#{model.to_s}" 
   end
 
