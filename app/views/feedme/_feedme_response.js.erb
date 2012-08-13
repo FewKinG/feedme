@@ -1,0 +1,4 @@
+var model = "<%= model %>"
+feedme_enable_form(model) 
+feedme_show_errors(model, <%= @feedme_object.errors.messages.to_json.html_safe %>)
+<%= render :partial => "feedme/create_#{model.to_s}", :locals => {:model => model} %>

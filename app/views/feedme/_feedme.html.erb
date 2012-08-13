@@ -1,5 +1,9 @@
 <script language="javascript">
-  $(function() {
-    feedme_init("<%= model %>")
+	$(function() {
+		<% if @builder.validate_on_client? %>
+			feedme_client_validate("<%= model %>", {
+			})
+		<% end %>
+		feedme_init("<%= model %>")
   })
 </script>

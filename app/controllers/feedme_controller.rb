@@ -6,14 +6,14 @@ class FeedmeController < ApplicationController
     obj = klass.new
     if params[:elements]
       params[:elements].each do |k,v|
-	if k
-	  obj.send("#{k.to_s}=", v)
-	end
+				if k
+					obj.send("#{k.to_s}=", v)
+				end
       end
     end
     @feedme_object = obj
     @success = obj.save 
-    render :partial => "feedme/create_#{model.to_s}"
+		render :partial => "feedme/feedme_response", :locals => {:model => model}
   end
 
   def new

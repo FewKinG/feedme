@@ -5,8 +5,8 @@ module Feedme
   extend ActiveSupport::Autoload
 
   autoload :Element
-  autoload :Stars
   autoload :Builder
+	autoload :ClientSideValidations
 
   module Helpers
     extend ActiveSupport::Autoload
@@ -17,6 +17,8 @@ module Feedme
     extend ActiveSupport::Autoload
     autoload :Stars
     autoload :Text
+		autoload :Textline
+		autoload :Select
   end
 
 end
