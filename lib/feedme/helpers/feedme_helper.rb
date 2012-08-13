@@ -5,7 +5,7 @@ module Feedme
   
 			def feedme(model, options = {}, &proc)
 				@builder = Feedme::Builder.new(model)
-				options = {:remote => false, :submit => "Submit"}.merge(options)
+				options = {:remote => false, :submit => "Submit", :submit_options => {}}.merge(options)
 				output = "<div class=\"feedme\" id=\"feedme_#{model}\">"
 				output << form_tag("#", :id => "feedme_inputs_#{model}") do 
 					capture(@builder, &proc)
