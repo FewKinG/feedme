@@ -1,6 +1,3 @@
-//= require i18n
-//= require i18n/translations
-//= require jquery.validate.min
 //= require feedme_custom
 
 function feedme_set_form_param(form, key, value) {
